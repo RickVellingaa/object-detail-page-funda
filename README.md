@@ -1,5 +1,1 @@
-# The Startup - Funda
-
-## Beschrijving
-
-## Kenmerken
+﻿# The Startup - Funda## Beschrijving## Kenmerk
