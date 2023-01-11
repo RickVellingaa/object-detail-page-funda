@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,45 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="icon" type="image/x-icon" href="./img/favicon.png">
     <script src="./scripts/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Funda</title>
 </head>
 <body>
-    
+    <header class="site-header">
+        <div class="nav-container">
+            <nav class="navigation">
+                <div class="nav-logo">
+                    <ul class="hamburger-menu">
+                        <li>
+                            <a href="/">
+                                <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+                                <span class="icon-text">Menu</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <a class="logo" href="/">
+                        <img src="./img/logo.svg" alt="Funda logo">
+                    </a>
+        </div>
+        <ul class="right-nav">
+            <li>
+                <a href="/">
+                    <ion-icon name="home-outline" class="menu-icon"></ion-icon>
+                    <span class="icon-text">Mijn Huis</span>
+                </a>
+            </li>
+            <li>
+                <a href="/">
+                    <ion-icon name="person-circle-outline" class="menu-icon"></ion-icon>
+                    <span class="icon-text">Inloggen</span>
+                </a>
+            </li>
+        </ul>
+            </nav>
+        </div>
+
+    </header>
 </body>
+
 </html>
