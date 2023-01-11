@@ -1,3 +1,9 @@
+:root{
+    --main-color: #F7A100;
+    --txt-color: #333;
+    --btn-color: #0071B3;
+}
+
 body{
-    background-color: red;
+
 }
