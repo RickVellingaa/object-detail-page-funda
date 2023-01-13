@@ -167,6 +167,11 @@ body {
         visibility: hidden;
     }
 
+    .menu-2 {
+        display: block;
+        visibility: visible;
+    }
+
     span.icon-text {
         font-size: 16px;
     }
@@ -176,6 +181,11 @@ body {
     .menu-1 {
         display: none;
         visibility: hidden;
+    }
+
+    .menu-2 {
+        display: block;
+        visibility: visible;
     }
 
     .nav-container {
