@@ -142,14 +142,19 @@ body {
     grid-template-rows: 1fr .8fr;
 }
 
-.main-container section a {
+.gallery-1 {
+    display: none;
+    visibility: hidden;
+}
+
+.main-container div a {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main-container section a img {
+.main-container div a img {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -157,17 +162,45 @@ body {
     padding: 0;
 }
 
-.main-container section:first-child {
+.main-container div:first-child {
     margin-top: 10px;
 }
 
-@media screen and (min-width: 786px) {
+iframe {
+    width: 100% !important;
+    height: 100%;
+}
+
+@media screen and (min-width: 680px) {
     .menu-1 {
         display: none;
         visibility: hidden;
     }
 
+    .main-container {
+        grid-template-areas: "foto map"
+            "foto2 map";
+    }
+
+    .main-container div:first-child{
+        grid-area: foto;
+    }
+
+    .main-container div:last-child{
+        grid-area: map;
+        margin-top: 10px;
+    }
+
+    .gallery-1{
+        grid-area: foto2;
+    }
+
     .menu-2 {
+        display: block;
+        visibility: visible;
+    }
+
+    .gallery-1 {
         display: block;
         visibility: visible;
     }
@@ -177,7 +210,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1000px) {
     .menu-1 {
         display: none;
         visibility: hidden;
