@@ -134,41 +134,37 @@ body {
 }
 
 .main-container {
-    width: calc(100% - 20px);
-    margin: auto;
-    position: relative;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-rows: 1fr .8fr;
-}
-
-.gallery-1 {
-    display: none;
-    visibility: hidden;
-}
-
-.main-container div a {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #0071B3; */
 }
 
-.main-container div a img {
+.main-container div {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
-    padding: 0;
+    margin: 10px;
+    /* background-color: red; */
 }
 
-.main-container div:first-child {
-    margin-top: 10px;
+.main-container div ul{
+    display: grid;
+}
+
+.main-container ul li:nth-child(2),
+.main-container ul li:nth-child(3) {
+    display: none;
+    visibility: hidden;
+}
+
+.main-container ul li a img {
+    width: 100%;
+    height: auto;
 }
 
 iframe {
-    width: 100% !important;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (min-width: 680px) {
@@ -177,36 +173,45 @@ iframe {
         visibility: hidden;
     }
 
-    .main-container {
-        grid-template-areas: "foto map"
-            "foto2 map";
-    }
-
-    .main-container div:first-child{
-        grid-area: foto;
-    }
-
-    .main-container div:last-child{
-        grid-area: map;
-        margin-top: 10px;
-    }
-
-    .gallery-1{
-        grid-area: foto2;
-    }
-
     .menu-2 {
-        display: block;
-        visibility: visible;
-    }
-
-    .gallery-1 {
         display: block;
         visibility: visible;
     }
 
     span.icon-text {
         font-size: 16px;
+    }
+
+    .main-container div ul{
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "foto map"
+                            "foto1 map";
+    }
+    
+
+    .main-container ul li:first-child{
+        grid-area: foto;
+    }
+
+    .main-container ul li:nth-child(2){
+        display: block;
+        visibility: visible;
+        grid-area: foto1;
+    }
+
+    .main-container ul li:last-child{
+        grid-area: map;
+    }
+
+    .main-container ul li a img {
+        width: 100%;
+        height: 100%;
+    }
+
+    iframe{
+        height: 100%;
     }
 }
 
@@ -227,5 +232,18 @@ iframe {
 
     .logo img {
         height: 36px;
+    }
+
+    .main-container div ul{
+        grid-gap: 10px;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: "foto foto1 map"
+                            "foto foto2 map";
+    }
+
+    .main-container ul li:nth-child(3){
+        display: block;
+        visibility: visible;
+        grid-area: foto2;
     }
 }
