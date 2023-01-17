@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="icon" type="image/x-icon" href="./img/favicon.png">
-    <script src="./scripts/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Funda</title>
@@ -60,6 +59,18 @@
                             <span class="icon-text">Inloggen</span>
                         </a>
                     </li>
+                    <li id="moon" class="hidden">
+                        <a href="/">
+                            <ion-icon name="sunny-outline" class="menu-icon"></ion-icon>
+                            <span class="icon-text">Light mode</span>
+                        </a>
+                    </li>
+                    <li id="sun" class="">
+                        <a href="/">
+                            <ion-icon name="moon-outline" class="menu-icon"></ion-icon>
+                            <span class="icon-text">Dark mode</span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -88,6 +99,6 @@
             </ul>
         </div>
     </main>
+    <script src="./scripts/script.js"></script>
 </body>
-
 </html>
