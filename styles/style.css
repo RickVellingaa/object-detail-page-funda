@@ -2,6 +2,7 @@
     --main-color: #F7A100;
     --txt-color: #333;
     --btn-color: #0071B3;
+    --highlight-color: #999;
 }
 
 @font-face {
@@ -119,6 +120,11 @@ body {
     position: relative;
 }
 
+.right-nav li a span{
+    display: none;
+    visibility: hidden;
+}
+
 .hidden{
     visibility: hidden;
     display: none;
@@ -221,34 +227,66 @@ iframe {
     height: var(--height, 0);
 }
 
-section{
+.info-container{
+    margin: 10px;
+    width: auto;
+    color: var(--txt-color);
+    /* background-color: red; */
+}
+
+.info-container div{
+    width: 100%;
+    height: auto;
+    display: grid;
+}
+
+.info-container div h1, .info-container div h1 span:last-child{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section div{
-    padding: 0px;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-section div div:first-child{
-    display: flex;
-    padding: 10px;
-    flex-direction: column;
+    line-height: 2rem;
     justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
 }
 
-section div div:last-child{
-    width: auto;
+
+.info-container div h1 span:last-child{
+    font-size: .7em;
+    line-height: 1.5em;
+    color: var(--highlight-color);
+    font-weight: 100;
 }
 
-@media screen and (min-width: 680px) {
+.info-container div h1 span:last-child a{
+    color: var(--btn-color);
+    text-decoration: none;
+}
+
+.info-container div p{
+    margin-top: 10px;
+    font-size: .9em;
+}
+
+.info-container div p span:first-child{
+    font-size: 1.5em !important;
+    font-weight: 900;
+}
+
+#more{
+    display: none;
+}
+
+#readBtn{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 1em;
+    color: var(--btn-color);
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 550px) {
     .menu-1 {
         display: none;
         visibility: hidden;
@@ -263,16 +301,17 @@ section div div:last-child{
         font-size: 16px;
     }
 
+    .right-nav li a span{
+        display: block;
+        visibility: visible;
+    }
+
     .main-container div ul{
         grid-gap: 10px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: "foto map"
                             "foto1 map";
-    }
-    
-    rect{
-        overflow: hidden;
     }
 
     .main-container ul li:first-child{
@@ -333,5 +372,17 @@ section div div:last-child{
         display: block;
         visibility: visible;
         grid-area: foto2;
+    }
+
+    .info-container{
+        margin: 0px;
+    }
+
+    .info-container div{
+        width: 90%;
+        height: auto;
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
