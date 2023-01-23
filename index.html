@@ -14,6 +14,8 @@
 </head>
 
 <body>
+
+    <!-- Navigatie balk -->
     <header class="site-header">
         <div class="nav-container">
             <nav class="navigation">
@@ -60,39 +62,29 @@
                             <span class="icon-text">Inloggen</span>
                         </a>
                     </li>
-                    <li id="moon" class="hidden">
-                        <a href="/">
-                            <ion-icon name="sunny-outline" class="menu-icon"></ion-icon>
-                            <span class="icon-text">Light mode</span>
-                        </a>
-                    </li>
-                    <li id="sun" class="">
-                        <a href="/">
-                            <ion-icon name="moon-outline" class="menu-icon"></ion-icon>
-                            <span class="icon-text">Dark mode</span>
-                        </a>
-                    </li>
                 </ul>
             </nav>
         </div>
 
     </header>
+
+    <!-- Foto's van huizen -->
     <main class="main-container">
         <div>
             <ul>
                 <li>
                     <a href="">
-                        <img src="./img/huis.jpg" alt="Foto van huis 1">
+                        <img id="myImg" src="./img/huis.jpg" alt="Voorkant van het huis">
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <img src="./img/huis1.jpg" alt="Foto van huis 2">
-                    </a>
+                        <img id="myImg1" src="./img/huis1.jpg" alt="Zijaanzicht van het huis">
+                    </a> 
                 </li>
                 <li>
                     <a href="">
-                        <img src="./img/huis2.jpg" alt="Foto van huis 3">
+                        <img id="myImg2" src="./img/huis2.jpg" alt="Omgeving van het huis">
                     </a>
                 </li>
                 <li>
@@ -104,13 +96,24 @@
         </div>
     </main>
 
+    <!-- Kenmerken en informatie over huis -->
     <section class="info-container">
         <div>
             <h1>
                 <span>Bosweg 5</span>
                 <span>7681 GJ Vroomshoop<a target="_blank"
                         href="https://www.google.com/maps/place/Vroomshoop/@52.4643782,6.5636712,14z/data=!3m1!4b1!4m5!3m4!1s0x47c7ff1838624a05:0x4eec231863ed050d!8m2!3d52.456752!4d6.5657522?hl=en">Vroomshoop</a></span>
+                <span>€ 865.000 k.k.<a href="">Wat worden mijn maandlasten?</a></span>
             </h1>
+            <ul>
+                <li>
+                    <ion-icon name="scan-outline"></ion-icon><span>223 m²</span>
+                </li>
+                <li>
+                    <ion-icon name="bed-outline"></ion-icon><span>4</span>
+                </li>
+                <li class="heart-animation"><a href=""><i class="fa-regular fa-heart"></i></a><span>Opslaan</span></li>
+            </ul>
             <p> <span>Omschrijving</span> <br>
                 Aan de rand van kerkdorp Casteren, ligt deze zeer fraaie, duurzame, vrijstaande, uiterst stijlvolle
                 woonboerderij van maar liefst 1.223 m3 met een schitterende privacy biedende tuin met vrij uitzicht
@@ -169,12 +172,12 @@
         </div>
     </section>
 
-    <!-- Animatie hart -->
-    <!-- <div class="animation">
-        <ul>
-            <li class="heart-animation"><a href=""><i class="fa-regular fa-heart"></i></a></li>
-        </ul>
-    </div> -->
+    <!-- Modal imgs -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+      </div>
 
     <script src="./scripts/script.js"></script>
 </body>

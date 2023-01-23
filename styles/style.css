@@ -24,6 +24,7 @@ body {
     line-height: 1.15;
 }
 
+/* Navigatie */
 .site-header {
     position: relative;
     background-color: var(--main-color);
@@ -145,6 +146,7 @@ body {
     display: block;
 }
 
+/* Huis fotos */
 .main-container {
     width: 100%;
     display: flex;
@@ -180,51 +182,73 @@ iframe {
     height: auto;
 }
 
-.animation {
+
+/* Huis informatie en kenmerken */
+.info-container div {
     display: block;
 }
 
-.animation ul {
+.info-container div ul {
     position: relative;
     display: flex;
-    float: right;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.animation ul li {
+.info-container div ul li {
     position: relative;
     list-style: none;
     margin: 0 20px;
+    justify-content: center;
+    display: flex;
     cursor: pointer;
 }
 
-.animation ul li a {
+.info-container div ul li a {
     text-decoration: none;
 }
 
-.animation ul li a .fa-regular {
-    font-size: 2em;
-    color: red;
+.info-container div ul li a .fa-regular {
+    font-size: 1.5em;
+    color: black;
 }
 
-.animation ul li::before {
+.info-container div ul li ion-icon {
+    font-size: 1.5em;
+}
+
+.info-container div ul li span {
+    line-height: 1.5em;
+    margin-left: 10px;
+    font-weight: 100;
+}
+
+.info-container div ul li:first-child {
+    margin-left: 0px;
+}
+
+.info-container div ul li::before {
     font-family: "FontAwesome";
     position: absolute;
-    top: -2.5px;
     left: 0;
-    /* z-index: -1; */
-    font-size: 2em;
+    top: -1.3px;
+    z-index: -1;
+    font-size: 1.5em;
     height: var(--height, 0);
     color: red;
     overflow: hidden;
     transition: .5s ease-in-out;
 }
 
-.animation ul li::before {
+.info-container div ul li::before {
     content: '\f004';
     color: red;
 }
 
-.animation ul li:hover::before {
+.info-container div ul li:hover::before {
     height: var(--height, 0);
 }
 
@@ -236,15 +260,14 @@ iframe {
     /* background-color: red; */
 }
 
-
-.info-container h1,
+.info-container ul,
 #readBtn {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--container-bg)
 }
 
 .info-container div h1,
-.info-container div h1 span:last-child {
+.info-container div h1 span:nth-child(2) {
     width: 100%;
     display: flex;
     line-height: 2rem;
@@ -253,15 +276,14 @@ iframe {
     flex-direction: column;
 }
 
-
-.info-container div h1 span:last-child {
+.info-container div h1 span:nth-child(2) {
     font-size: .7em;
     line-height: 1.5em;
     color: var(--highlight-color);
     font-weight: 100;
 }
 
-.info-container div h1 span:last-child a {
+.info-container div h1 span:nth-child(2) a {
     color: var(--btn-color);
     text-decoration: none;
 }
@@ -271,13 +293,25 @@ iframe {
     font-size: .9em;
 }
 
-.info-container div:last-child {
+/* .info-container div:nth-child(2) {
     margin-top: 15px;
-}
+} */
 
 .info-container div p span:first-child {
     font-size: 1.5em !important;
     font-weight: 900;
+}
+
+.info-container div h1 span:last-child {
+    font-size: .9em;
+}
+
+.info-container div h1 span:last-child a {
+    font-size: .75em;
+    color: var(--btn-color);
+    text-decoration: none;
+    padding-left: 10px;
+    font-weight: 100;
 }
 
 #more {
@@ -330,6 +364,92 @@ iframe {
     border-radius: 5px;
 }
 
+.extra {
+    visibility: hidden;
+}
+
+.extra-info .extra {
+    margin: 0px;
+}
+
+/* Modal imgs */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  /* Caption of Modal Image */
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, #caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+    .modal-content {
+      width: 90%;
+    }
+  }
+
 @media screen and (min-width: 550px) {
     .menu-1 {
         display: none;
@@ -381,6 +501,13 @@ iframe {
         height: 100%;
     }
 
+    .extra {
+        visibility: hidden;
+        display: block;
+    }
+}
+
+@media screen and (min-width: 750px) {
     .info-container {
         width: 90%;
         margin: auto;
@@ -394,8 +521,13 @@ iframe {
             "kenmerk2 kenmerk2";
     }
 
+    .modal-content {
+        width: 80%;
+    }
+
     .extra {
         visibility: hidden;
+        display: none;
     }
 
     .info-container div:first-child {
@@ -424,23 +556,10 @@ iframe {
     }
 
     #more {
-        display: none;
-    }
-
-    #readBtn,
-    .extra {
-        display: block;
-        visibility: visible;
-    }
-}
-
-@media screen and (min-width: 750px) {
-    #more {
         display: block;
     }
 
-    #readBtn,
-    .extra {
+    #readBtn {
         display: none;
         visibility: hidden;
     }
@@ -449,7 +568,6 @@ iframe {
 @media screen and (min-width: 1050px) {
     .extra {
         display: block;
-        visibility: visible;
     }
 
     .menu-1 {
@@ -500,6 +618,17 @@ iframe {
     }
 
     .extra {
+        display: block;
+        visibility: hidden;
+    }
+
+    .extra-info .extra {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
+    #readBtn {
+        display: none;
         visibility: hidden;
     }
 
