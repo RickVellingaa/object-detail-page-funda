@@ -2,8 +2,12 @@
     --main-color: #F7A100;
     --txt-color: #333;
     --btn-color: #0071B3;
+    --black-color: #000;
+    --white-color: #fff;
+    --footer-color: #ededed;
     --highlight-color: #999;
     --container-bg: #E6F2F7;
+    --heart-color: red;
 }
 
 @font-face {
@@ -81,7 +85,7 @@ body {
     padding: 0 12px;
     line-height: 60px;
     max-width: 180px;
-    color: #fff;
+    color: var(--white-color);
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -158,6 +162,7 @@ body {
 .main-container div {
     width: 100%;
     margin: 10px;
+    margin-top: 25px;
     /* background-color: red; */
 }
 
@@ -213,7 +218,7 @@ iframe {
 
 .info-container div ul li a .fa-regular {
     font-size: 1.5em;
-    color: black;
+    color: var(--black-color);
 }
 
 .info-container div ul li ion-icon {
@@ -238,14 +243,14 @@ iframe {
     z-index: -1;
     font-size: 1.5em;
     height: var(--height, 0);
-    color: red;
+    color: var(--heart-color);
     overflow: hidden;
     transition: .5s ease-in-out;
 }
 
 .info-container div ul li::before {
     content: '\f004';
-    color: red;
+    color: var(--heart-color);
 }
 
 .info-container div ul li:hover::before {
@@ -359,7 +364,7 @@ iframe {
 
 .extra-info dl dd {
     width: auto;
-    background: white;
+    background: var(--white-color);
     padding: 5px;
     border-radius: 5px;
 }
@@ -374,82 +379,151 @@ iframe {
 
 /* Modal imgs */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-  }
-  
-  /* Modal Content (image) */
-  .modal-content {
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: var(--txt-color);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
     margin: auto;
     display: block;
     width: 100%;
     max-width: 900px;
-  }
-  
-  /* Caption of Modal Image */
-  #caption {
+}
+
+/* Caption of Modal Image */
+#caption {
     margin: auto;
     display: block;
     width: 80%;
     max-width: 900px;
     text-align: center;
-    color: #ccc;
+    color: var(--main-color);
     padding: 10px 0;
     height: 150px;
-  }
-  
-  /* Add Animation */
-  .modal-content, #caption {  
+}
+
+/* Add Animation */
+.modal-content,
+#caption {
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
     animation-duration: 0.6s;
-  }
-  
-  @-webkit-keyframes zoom {
-    from {-webkit-transform:scale(0)} 
-    to {-webkit-transform:scale(1)}
-  }
-  
-  @keyframes zoom {
-    from {transform:scale(0)} 
-    to {transform:scale(1)}
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #f1f1f1;
+    color: var(--white-color);
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #bbb;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--highlight-color);
     text-decoration: none;
     cursor: pointer;
-  }
-  
-  /* 100% Image Width on Smaller Screens */
-  @media only screen and (max-width: 700px){
-    .modal-content {
-      width: 90%;
-    }
-  }
+}
 
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-color);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid var(--main-color);
+}
+
+footer nav {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-size: 1em;
+}
+
+footer nav div {
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+footer nav div span {
+    font-weight: 900;
+    padding: 5px;
+}
+
+footer nav div ul {
+    padding: 5px;
+    list-style: none;
+}
+
+footer nav div ul li{
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+footer nav div ul li a{
+    color: var(--btn-color);
+    text-decoration: none;
+}
+
+/* Media querys */
 @media screen and (min-width: 550px) {
     .menu-1 {
         display: none;
@@ -504,6 +578,11 @@ iframe {
     .extra {
         visibility: hidden;
         display: block;
+    }
+
+    footer nav {
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
     }
 }
 
@@ -565,6 +644,16 @@ iframe {
     }
 }
 
+@media screen and (min-width: 950px) {
+    footer nav {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    footer nav div {
+        padding-top: 0px;
+    }
+}
+
 @media screen and (min-width: 1050px) {
     .extra {
         display: block;
@@ -607,13 +696,14 @@ iframe {
 
     .info-container {
         width: 90%;
+        /* max-width: 1600px; */
         margin: auto;
         display: grid;
-        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-columns: 2.5fr 1fr 1fr;
         grid-template-rows: 1fr;
-        grid-gap: 15px;
+        grid-gap: 30px;
         padding: 10px;
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         grid-template-areas: "omschrijving kenmerk1 kenmerk2";
     }
 
