@@ -690,7 +690,7 @@ footer nav div ul li a{
         /* max-width: 1600px; */
         margin: auto;
         display: grid;
-        grid-template-columns: 2.5fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
         grid-template-rows: 1fr;
         grid-gap: 30px;
         padding: 10px;
