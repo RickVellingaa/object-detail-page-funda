@@ -125,15 +125,10 @@ body {
     position: relative;
 }
 
-.right-nav li a span {
+.right-nav li a span, .hidden {
     display: none;
     visibility: hidden;
-}
-
-.hidden {
-    visibility: hidden;
-    display: none;
-}
+}   
 
 .logo {
     margin: 8px 0;
