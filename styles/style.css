@@ -125,10 +125,11 @@ body {
     position: relative;
 }
 
-.right-nav li a span, .hidden {
+.right-nav li a span,
+.hidden {
     display: none;
     visibility: hidden;
-}   
+}
 
 .logo {
     margin: 8px 0;
@@ -299,6 +300,7 @@ iframe {
 .info-container div p span:first-child {
     font-size: 1.5em !important;
     font-weight: 900;
+    margin-bottom: 10px;
 }
 
 .info-container div h1 span:last-child {
@@ -461,6 +463,59 @@ iframe {
     }
 }
 
+.compare-container {
+    position: relative;
+    width: auto;
+    height: 100%;
+    margin: 10px;
+    /* background-color: red; */
+    padding-bottom: 25px;
+}
+
+.compare-container div{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 10px;
+}
+
+.compare-container div section img{
+    width: 100%;
+}
+
+.compare-container div section h3{
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-container div section h3 span{
+    padding-top: 1.5px;
+    padding-bottom: 1.5px;
+}
+
+.compare-container div section h3 span:first-child{
+    font-size: .9em;
+    line-height: 1.5em;
+    color: var(--btn-color);
+    font-weight: 100;
+}
+
+.compare-container div section h3 span:nth-child(2) {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-size: .8em;
+}
+
+.compare-container div section h3 span:last-child{
+    font-size: .8em;
+}
+
+.compare-container h2{
+    padding-bottom: 10px;
+}
+
 /* Footer */
 footer {
     background-color: var(--footer-color);
@@ -499,12 +554,12 @@ footer nav div ul {
     list-style: none;
 }
 
-footer nav div ul li{
+footer nav div ul li {
     padding-top: 7px;
     padding-bottom: 7px;
 }
 
-footer nav div ul li a{
+footer nav div ul li a {
     color: var(--btn-color);
     text-decoration: none;
 }
@@ -564,6 +619,14 @@ footer nav div ul li a{
     .extra {
         visibility: hidden;
         display: block;
+    }
+
+    .compare-container div{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
     }
 
     footer nav {
@@ -628,6 +691,20 @@ footer nav div ul li a{
         display: none;
         visibility: hidden;
     }
+
+    .compare-container div{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .compare-container{
+        width: 90%;
+        /* background-color: red; */
+        margin: auto;
+    } 
 }
 
 @media screen and (min-width: 950px) {
@@ -731,5 +808,26 @@ footer nav div ul li a{
 
     .info-container div:last-child {
         margin-top: 0px;
+    }
+
+    /* .compare-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    .compare-container{
+        width: 90%;
+        /* background-color: red; */
+        margin: auto;
+    } 
+
+    .compare-container div{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: 1fr;
     }
 }
